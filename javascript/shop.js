@@ -11,6 +11,8 @@ const supabaseKey =
 
 const supabase = createClient(supabaseUrl, supabaseKey)
 
+import { renderUI } from "./ui.js"
+
 
 // ================================
 // GLOBALS
@@ -19,7 +21,7 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 let shopItems = []
 let profile = null
 let user = null
-let ownedMap = {} // 🔥 NEW: Cache für Ownership
+let ownedMap = {}
 
 
 // ================================
@@ -67,7 +69,7 @@ async function loadShop() {
 
   shopItems = data
 
-  await loadOwnedItems() // 🔥 NEW
+  await loadOwnedItems()
   renderShop()
 }
 
@@ -130,6 +132,10 @@ function isEquipped(item) {
 
   if (item.type === "titel") {
     return profile?.equipped_title === item.id
+  }
+
+  if (item.type === "musik") {
+    return profile?.equipped_music === item.id
   }
 
   return false
@@ -201,15 +207,15 @@ function renderShop() {
       const card = document.createElement("div")
       card.className = "shop-card"
 
-      const cosmetic = ["avatar", "rahmen", "titel"].includes(item.type)
+      const cosmetic = ["avatar", "rahmen", "titel", "musik"].includes(item.type)
       const equipped = isEquipped(item)
       const owned = getOwnedSync(item.id)
 
       if (equipped) {
-  card.classList.add("equippedCard")
-} else if (owned > 0 && ["avatar", "rahmen", "titel"].includes(item.type)) {
-  card.classList.add("ownedCard")
-}
+        card.classList.add("equippedCard")
+      } else if (owned > 0 && cosmetic) {
+        card.classList.add("ownedCard")
+      }
 
       let buttonHTML = ""
 
@@ -369,7 +375,7 @@ async function buyItem(item) {
       .eq("item_id", item.id)
   }
 
-  if (["avatar", "rahmen", "titel"].includes(item.type)) {
+  if (["avatar", "rahmen", "titel", "musik"].includes(item.type)) {
 
     await equipItem(item)
 
@@ -387,6 +393,7 @@ async function buyItem(item) {
   }
 
   await loadStatus()
+  renderUI(profile)
 }
 
 
@@ -401,6 +408,7 @@ async function equipItem(item) {
   if (item.type === "avatar") update.equipped_avatar = item.id
   if (item.type === "rahmen") update.equipped_frame = item.id
   if (item.type === "titel") update.equipped_title = item.id
+  if (item.type === "musik") update.equipped_music = item.id
 
   await supabase
     .from("profiles")
