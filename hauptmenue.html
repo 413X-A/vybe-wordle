@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+<meta charset="UTF-8">
+<title>VYBE</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="./css/components/base.css">
+<link rel="stylesheet" href="./css/components/seasonpass.css">
+<link rel="stylesheet" href="./css/components/navigation.css">
+<link rel="stylesheet" href="./css/components/overlay.css">
+
+<link rel="icon" href="./assets/icons/icon.ico">
+</head>
+
+<body>
+
+<div class="game-frame">
+
+  <div id="top-ui-bar"></div>
+
+  <img src="assets/icons/wordle_main.png" class="wordle">
+
+  <h1 class="title">HAUPTMENÜ</h1>
+
+<!-- SAISONPASS -->
+
+<div class="bp-wrapper">
+
+  <div class="bp-header">
+    <h2>SEASON PASS</h2>
+    <div id="bpProgressText">0 / 2500</div>
+  </div>
+
+  <div class="bp-progress-bar">
+    <div id="seasonBar" class="bp-progress-fill"></div>
+  </div>
+
+  <div id="bpTrack" class="bp-track-vertical"></div>
+
+</div>
+
+  <div class="game-path">
+
+    <div class="node" id="homeNode">
+      <div class="node-circle">
+        <img src="assets/icons/home.png" class="node-img">
+      </div>
+      <p>Home</p>
+    </div>
+
+    <div class="node" id="dailyNode">
+      <div class="node-circle">
+        <img src="assets/icons/dailywort.png" class="node-img">
+      </div>
+      <p>Daily</p>
+    </div>
+
+    <div class="node" id="shopNode">
+      <div class="node-circle">
+        <img src="assets/icons/einkaufsladen.png" class="node-img">
+      </div>
+      <p>Shop</p>
+    </div>
+
+    <div class="node" id="leaderboardNode">
+      <div class="node-circle">
+        <img src="assets/icons/sieger.png" class="node-img">
+      </div>
+      <p>Rank</p>
+    </div>
+
+    <div class="node" id="logoutNode">
+      <div class="node-circle">
+        <img src="assets/icons/logout.png" class="node-img">
+      </div>
+      <p>Logout</p>
+    </div>
+
+  </div>
+
+</div>
+
+<script type="module" src="./javascript/ui.js"></script>
+<script type="module" src="./javascript/hauptmenue.js"></script>
+<script type="module" src="./javascript/navigator.js"></script>
+
+</body>
+</html>

@@ -1,1 +1,1 @@
-# vybe-wordle
+# mamordle

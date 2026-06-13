@@ -1,0 +1,97 @@
+/* =========================
+   BASE SYSTEM
+========================= */
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background: #0f0f14;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+}
+
+/* FRAME */
+.game-frame {
+  width: 100%;
+  max-width: 420px;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 35px 20px 135px; 
+
+  box-sizing: border-box;
+
+  position: relative;
+}
+
+/* =========================
+   TOP BAR (FIXED + CLEAN)
+========================= */
+
+#top-ui-bar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 90%;
+  max-width: 420px;
+
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  padding: 0 12px;
+
+  background: rgba(255,255,255,0.03);
+  border-radius: 0 0 18px 18px;
+
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  z-index: 9999;
+}
+
+/* optional content inside top bar */
+#top-ui-bar span {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.wordle {
+  width: 120px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.title {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+#status {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.7;
+}

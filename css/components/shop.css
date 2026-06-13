@@ -1,0 +1,140 @@
+.shop-section {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.shop-title {
+  font-size: 14px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+/* =========================
+   ESSENTIAL LIST
+========================= */
+
+.shop-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shop-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 14px;
+
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+}
+
+.shop-card .icon {
+  font-size: 20px;
+  width: 40px;
+  text-align: center;
+}
+
+.shop-card .info {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.shop-card h3 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.shop-card p {
+  margin: 2px 0 0;
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+.shop-card button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 10px;
+  background: #7b2cff;
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+/* =========================
+   COSMETIC GRID
+========================= */
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.shop-tile {
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(10px);
+
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.shop-tile:hover {
+  transform: scale(1.03);
+  background: rgba(255,255,255,0.07);
+}
+
+.tile-icon {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.shop-tile p {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.shop-tile span {
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+
+
+.shop-card.equippedCard {
+  border: 1px solid rgba(46, 204, 113, 0.6);
+  background: rgba(46, 204, 113, 0.25);
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.25);
+  color: #2ecc71;
+}
+
+
+
+/* bereits ausgerüstet */
+.equippedCard {
+  border: 2px solid gold;
+  background: rgba(255, 215, 0, 0.08);
+}
+
+
+.ownedCard {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  opacity: 0.85;
+  transition: 0.2s ease;
+}
+
+.ownedCard:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.25);
+}

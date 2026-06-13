@@ -1,0 +1,4 @@
+✔ GRÜN = „alle dieses Buchstabens korrekt abgeschlossen“
+✔ VIOLETT = „teilweise korrekt + noch offene gleiche Buchstaben“
+✔ ORANGE = „vorhanden aber noch nicht sinnvoll eingeordnet“
+✔ GRAU = „nicht im Wort“
